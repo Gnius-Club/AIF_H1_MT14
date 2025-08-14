@@ -1,24 +1,296 @@
-<!-- 
-HTML Template for Missions, delete and replace with mission HTML
--->
+
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-  <title>Gnius Club</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Playbook — 1º Preparatoria — Misión M14 - RAG</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
-
 <body>
-  <h1>
-    Playbook HTML Placeholder Template
-  </h1>
-  <p>
-    Replace with actual playbook code.
-  </p>
-  <script src="script.js"></script>
+<header>
+<h1><span class="book-icon">📋</span> <strong>Playbook Misión M14 - RAG</strong></h1>
+<div class="header-widgets">
+<div class="timer-container">
+<span id="timer">⏱️ 00:00</span>
+<button id="startStop">Start</button>
+<button id="reset">Reset</button>
+</div>
+<div class="theme-toggle">
+<i class="fas fa-sun"></i>
+<label class="switch">
+<input type="checkbox" id="theme-toggle-input">
+<span class="slider round"></span>
+</label>
+<i class="fas fa-moon"></i>
+</div>
+</div>
+</header>
+<div class="main-container">
+<aside class="activity-list">
+<h2>Actividades</h2>
+<ul>
+<li><a href="#activity-0">📝</a></li>
+<li><a href="#activity-1">1</a></li>
+<li><a href="#activity-2">2</a></li>
+<li><a href="#activity-3">3</a></li>
+<li><a href="#activity-4">4</a></li>
+<li><a href="#activity-5">5</a></li>
+</ul>
+<div class="sidebar-info">
+<p>💡 Cada actividad está cuidadosamente diseñada para involucrar a los estudiantes.</p>
+<p>⏱️ Se proporcionan estimaciones de tiempo para cada actividad para ayudarle a mantener el rumbo.</p>
+</div>
+</aside>
+<main class="content">
+<div class="progress-bar">
+<div class="progress"></div>
+</div>
+<button id="toggle-dialogues">Mostrar todos los diálogos</button>
+<!-- 0) De un Vistazo -->
+<section class="activity-card" id="activity-0">
+<h2 class="activity-title">📝 De un Vistazo: Misión M14 - RAG</h2>
+<p class="activity-purpose">Resumen de objetivos, secuencia y entregables de la sesión.</p>
+<div class="overview-table-container">
+<table>
+<thead>
+<tr>
+<th style="width: 50%;">Objetivos, Tácticas y Entregable</th>
+<th style="width: 50%;">Materiales Específicos y Preparación Previa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<h3>Objetivos e “I Can”</h3>
+<ul>
+<li>Puedo explicar el concepto de Retrieval Augmented Generation (RAG) y sus beneficios para la fiabilidad de la IA.</li>
+<li>Puedo utilizar una herramienta RAG (NotebookLM) para generar contenido nuevo y relevante a partir de documentos específicos.</li>
+</ul>
+<h3>Secuencia y tiempos</h3>
+<ol>
+<li>Saludo Interactivo con IA — 3 min</li>
+<li>“I Can” + Desafío — 5–7 min</li>
+<li>AI GYM — 10–12 min</li>
+<li>Brain Spark — 17–20 min</li>
+<li>GNIUS STORM — 5 min</li>
+</ol>
+<h3>Entregable del Micro-Proyecto</h3>
+<ul>
+<li>Un material nuevo (guion de podcast, caso de estudio, flashcards inteligentes, etc.) generado en NotebookLM a partir de documentos cargados.</li>
+</ul>
+<h3>Criterios de calidad</h3>
+<ul>
+<li>El material generado es coherente y relevante con los documentos fuente cargados.</li>
+<li>Se demuestra la aplicación efectiva del proceso RAG (Retrieval -> Augmentation -> Generation).</li>
+<li>El contenido aborda problemas como conocimiento obsoleto o alucinaciones, según lo explicado.</li>
+<li>El formato del material (guion, caso, flashcards) es adecuado y estructurado.</li>
+</ul>
+</td>
+<td>
+<h3>Materiales</h3>
+<ul>
+<li>Proyector e internet</li>
+<li>Acceso a LLM (Claude)</li>
+<li>Acceso a NotebookLM</li>
+<li>Documentos temáticos de ejemplo</li>
+</ul>
+<h3>Preparación previa</h3>
+<ol>
+<li>Verificar acceso a NotebookLM y Claude.</li>
+<li>Tener documentos temáticos de ejemplo listos para cargar en NotebookLM.</li>
+<li>Familiarizarse con la interfaz de NotebookLM y sus funciones RAG.</li>
+<li>Tener una plantilla o ejemplo mínimo del material a generar (guion, caso, flashcards).</li>
+</ol>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- 1) Saludo Interactivo con IA -->
+<section class="activity-card" id="activity-1">
+<h2 class="activity-title">Saludo Interactivo con IA</h2>
+<p class="activity-purpose">Establecer tono profesional, conectar con el tema y activar a Xolo con perfil+intereses.</p>
+<div class="steps">
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 1 — Bienvenida y foco</h3>
+<p class="step-instructions">Proyectar Diapositiva 2. Enuncia el foco conceptual (RAG) y su relevancia profesional.</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">Equipo: hoy profundizaremos en Retrieval Augmented Generation (RAG), una técnica crucial para que las IA generen información precisa y actualizada. Esto nos permitirá superar limitaciones comunes como las alucinaciones o el conocimiento obsoleto, elevando la fiabilidad de nuestros sistemas de IA. Nuestro objetivo es producir material nuevo y relevante, respaldado por fuentes específicas.</p>
+</div>
+</div>
+</article>
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 2 — Activación con Xolo</h3>
+<p class="step-instructions">Cada estudiante abre su chat con Xolo y envía un saludo con perfil de aprendizaje e intereses, haciendo referencia a la misión.</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">Activen a Xolo con su perfil e intereses. Envíen un mensaje como: "Hola Xolo, soy [Nombre], perfil [Analista de Datos]; me interesa [la aplicación de IA en la medicina]. Estoy en la Misión M14 sobre RAG." Confirmen que comprendieron los criterios de hoy y sigan sus indicaciones personalizadas.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 2) “I Can” + Desafío -->
+<section class="activity-card" id="activity-2">
+<h2 class="activity-title">“I Can Statement” + Desafío</h2>
+<p class="activity-purpose">Explicitar metas y presentar el reto que guiará la producción.</p>
+<div class="steps">
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 1 — Presenta el reto</h3>
+<p class="step-instructions">Proyectar Diapositiva 3. Define qué se logrará hoy (ser un "Experto Temático IA" con RAG).</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">El reto de hoy es convertirse en un "Experto Temático IA". Utilizarán la técnica RAG para generar contenido nuevo y preciso a partir de documentos específicos que ustedes proporcionen. Evaluaremos la coherencia del material con las fuentes, la precisión y la aplicación efectiva del proceso RAG.</p>
+</div>
+</div>
+</article>
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 2 — Escribe tu “I Can”</h3>
+<p class="step-instructions">Proyectar Diapositiva 4. Cada estudiante redacta 1 “I Can” concreto alineado al entregable del micro-proyecto.</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">Ahora, formulen su propio "I Can Statement" en una frase. Por ejemplo: "Puedo generar un guion de podcast relevante y preciso usando RAG en NotebookLM a partir de mis documentos fuente." Tienen un minuto para redactarlo.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 3) AI GYM -->
+<section class="activity-card" id="activity-3">
+<h2 class="activity-title">AI GYM</h2>
+<p class="activity-purpose">Formalizar criterios y/o framework antes de producir.</p>
+<div class="steps">
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 1 — Marco del día: Retrieval Augmented Generation (RAG)</h3>
+<p class="step-instructions">Proyectar Diapositiva 5. Introduce RAG: problemas que resuelve (conocimiento obsoleto, alucinaciones, falta de acceso a datos privados), y el proceso Retrieval -> Augmentation -> Generation. Menciona 'chunking'.</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">Hoy nos enfocamos en RAG. Esta técnica es vital porque permite a las IA acceder a información externa y actualizada, evitando alucinaciones y el uso de datos obsoletos. El proceso es: primero, 'Retrieval' (la IA busca información relevante en sus documentos); segundo, 'Augmentation' (esa información se añade al prompt); y tercero, 'Generation' (la IA genera la respuesta usando el contexto aumentado). Conceptos como 'chunking' son clave para la eficiencia del 'retrieval'. Eviten generar contenido sin verificar las fuentes; con RAG, la trazabilidad es fundamental.</p>
+</div>
+</div>
+</article>
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 2 — Mini-demostración con NotebookLM</h3>
+<p class="step-instructions">Proyectar Diapositiva 6. Construye en vivo un ejemplo mínimo de RAG en NotebookLM (cargar documento, hacer pregunta, mostrar respuesta aumentada).</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">Observen cómo en NotebookLM cargamos este documento. Al hacer una pregunta específica, el sistema primero 'recupera' los pasajes más relevantes del documento. Luego, 'aumenta' mi pregunta con ese contexto y, finalmente, 'genera' una respuesta. ¿Pueden identificar en la respuesta dónde se cita el documento original? ¿La información generada es consistente con el texto fuente?</p>
+</div>
+</div>
+</article>
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 3 — Check rápido</h3>
+<p class="step-instructions">Proyectar Diapositiva 7. 2 ítems de verificación sobre RAG.</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">Pregunta 1: ¿Cuál es una de las principales limitaciones de los LLM que RAG busca resolver? Pregunta 2: Nombra las tres fases del proceso RAG.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 4) Brain Spark -->
+<section class="activity-card" id="activity-4">
+<h2 class="activity-title">Brain Spark</h2>
+<p class="activity-purpose">Producir el entregable tangible del Micro-Proyecto aplicando el marco del AI GYM.</p>
+<div class="steps">
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 1 — Producción del material</h3>
+<p class="step-instructions">Proyectar Diapositiva 8. Cada estudiante sube documentos sobre un tema a NotebookLM y usa la generación aumentada para crear nuevo material (guion de podcast, caso de estudio, flashcards inteligentes, etc.). Tiempo de trabajo autónomo.</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">N/A</p>
+</div>
+</div>
+</article>
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 2 — Iteración y mejora</h3>
+<p class="step-instructions">Proyectar Diapositiva 9. Refina el material generado. Asegúrate de que todas las afirmaciones sean trazables a los documentos fuente y que el contenido sea coherente y relevante.</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">Antes de cerrar la producción: valida que cada dato clave en tu material se derive directamente de los documentos que cargaste. ¿El contenido es preciso? ¿El formato elegido es el más efectivo para comunicar la información? Ajusta y refina tu material según sea necesario.</p>
+</div>
+</div>
+</article>
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 3 — Evidencia de resultado</h3>
+<p class="step-instructions">Proyectar Diapositiva 10. Solicita el comprobante del material generado (enlace a NotebookLM, texto exportado, capturas de pantalla).</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">Suban la evidencia de su material generado al canal indicado. Nombren su archivo o enlace: M14_RAG_[Nombre]_[TipoDeMaterial].</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+<!-- 5) GNIUS STORM -->
+<section class="activity-card" id="activity-5">
+<h2 class="activity-title">GNIUS STORM</h2>
+<p class="activity-purpose">Exhibición breve, síntesis y conexión profesional.</p>
+<div class="steps">
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 1 — Showcase relámpago</h3>
+<p class="step-instructions">2–3 estudiantes muestran la evidencia clave de su material generado (30–45 s c/u), enfocándose en cómo RAG mejoró la precisión.</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">Describan su material en 30 segundos: ¿Qué generaron? ¿Cómo la aplicación de RAG garantizó la precisión y relevancia del contenido a partir de sus fuentes?</p>
+</div>
+</div>
+</article>
+<article class="step-card">
+<div class="step-content">
+<h3 class="step-title">Paso 2 — Cierre ejecutivo</h3>
+<p class="step-instructions">Proyectar Diapositiva 11. Redacta síntesis: (a) 1 aprendizaje clave, (b) 1 criterio de calidad que marcó la diferencia, (c) siguiente paso aplicable fuera del aula.</p>
+</div>
+<div class="collapsible">
+<button type="button" class="collapsible-button">Diálogo Sugerido</button>
+<div class="collapsible-content">
+<p class="dialogue assistant">Síntesis de la misión: El aprendizaje clave de hoy es que las IA no solo generan, sino que pueden ser 'expertas' en un tema específico si les proporcionamos el contexto adecuado. El criterio de calidad que marcó la diferencia fue la trazabilidad y coherencia con las fuentes. Como siguiente paso, consideren cómo aplicar RAG en sus proyectos de investigación o en la creación de contenido especializado en cualquier campo, asegurando siempre la máxima fiabilidad.</p>
+</div>
+</div>
+</article>
+</div>
+</section>
+</main>
+</div>
+<script src="script.js"></script>
 </body>
-
 </html>
