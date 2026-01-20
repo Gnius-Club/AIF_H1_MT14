@@ -1,296 +1,443 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Playbook — 1º Preparatoria — Misión M14 - RAG</title>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook-HS1-TM14</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
-<h1><span class="book-icon">📋</span> <strong>Playbook Misión M14 - RAG</strong></h1>
-<div class="header-widgets">
-<div class="timer-container">
-<span id="timer">⏱️ 00:00</span>
-<button id="startStop">Start</button>
-<button id="reset">Reset</button>
-</div>
-<div class="theme-toggle">
-<i class="fas fa-sun"></i>
-<label class="switch">
-<input type="checkbox" id="theme-toggle-input">
-<span class="slider round"></span>
-</label>
-<i class="fas fa-moon"></i>
-</div>
-</div>
-</header>
-<div class="main-container">
-<aside class="activity-list">
-<h2>Actividades</h2>
-<ul>
-<li><a href="#activity-0">📝</a></li>
-<li><a href="#activity-1">1</a></li>
-<li><a href="#activity-2">2</a></li>
-<li><a href="#activity-3">3</a></li>
-<li><a href="#activity-4">4</a></li>
-<li><a href="#activity-5">5</a></li>
-</ul>
-<div class="sidebar-info">
-<p>💡 Cada actividad está cuidadosamente diseñada para involucrar a los estudiantes.</p>
-<p>⏱️ Se proporcionan estimaciones de tiempo para cada actividad para ayudarle a mantener el rumbo.</p>
-</div>
-</aside>
-<main class="content">
-<div class="progress-bar">
-<div class="progress"></div>
-</div>
-<button id="toggle-dialogues">Mostrar todos los diálogos</button>
-<!-- 0) De un Vistazo -->
-<section class="activity-card" id="activity-0">
-<h2 class="activity-title">📝 De un Vistazo: Misión M14 - RAG</h2>
-<p class="activity-purpose">Resumen de objetivos, secuencia y entregables de la sesión.</p>
-<div class="overview-table-container">
-<table>
-<thead>
-<tr>
-<th style="width: 50%;">Objetivos, Tácticas y Entregable</th>
-<th style="width: 50%;">Materiales Específicos y Preparación Previa</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>
-<h3>Objetivos e “I Can”</h3>
-<ul>
-<li>Puedo explicar el concepto de Retrieval Augmented Generation (RAG) y sus beneficios para la fiabilidad de la IA.</li>
-<li>Puedo utilizar una herramienta RAG (NotebookLM) para generar contenido nuevo y relevante a partir de documentos específicos.</li>
-</ul>
-<h3>Secuencia y tiempos</h3>
-<ol>
-<li>Saludo Interactivo con IA — 3 min</li>
-<li>“I Can” + Desafío — 5–7 min</li>
-<li>AI GYM — 10–12 min</li>
-<li>Brain Spark — 17–20 min</li>
-<li>GNIUS STORM — 5 min</li>
-</ol>
-<h3>Entregable del Micro-Proyecto</h3>
-<ul>
-<li>Un material nuevo (guion de podcast, caso de estudio, flashcards inteligentes, etc.) generado en NotebookLM a partir de documentos cargados.</li>
-</ul>
-<h3>Criterios de calidad</h3>
-<ul>
-<li>El material generado es coherente y relevante con los documentos fuente cargados.</li>
-<li>Se demuestra la aplicación efectiva del proceso RAG (Retrieval -> Augmentation -> Generation).</li>
-<li>El contenido aborda problemas como conocimiento obsoleto o alucinaciones, según lo explicado.</li>
-<li>El formato del material (guion, caso, flashcards) es adecuado y estructurado.</li>
-</ul>
-</td>
-<td>
-<h3>Materiales</h3>
-<ul>
-<li>Proyector e internet</li>
-<li>Acceso a LLM (Claude)</li>
-<li>Acceso a NotebookLM</li>
-<li>Documentos temáticos de ejemplo</li>
-</ul>
-<h3>Preparación previa</h3>
-<ol>
-<li>Verificar acceso a NotebookLM y Claude.</li>
-<li>Tener documentos temáticos de ejemplo listos para cargar en NotebookLM.</li>
-<li>Familiarizarse con la interfaz de NotebookLM y sus funciones RAG.</li>
-<li>Tener una plantilla o ejemplo mínimo del material a generar (guion, caso, flashcards).</li>
-</ol>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</section>
-<!-- 1) Saludo Interactivo con IA -->
-<section class="activity-card" id="activity-1">
-<h2 class="activity-title">Saludo Interactivo con IA</h2>
-<p class="activity-purpose">Establecer tono profesional, conectar con el tema y activar a Xolo con perfil+intereses.</p>
-<div class="steps">
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 1 — Bienvenida y foco</h3>
-<p class="step-instructions">Proyectar Diapositiva 2. Enuncia el foco conceptual (RAG) y su relevancia profesional.</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">Equipo: hoy profundizaremos en Retrieval Augmented Generation (RAG), una técnica crucial para que las IA generen información precisa y actualizada. Esto nos permitirá superar limitaciones comunes como las alucinaciones o el conocimiento obsoleto, elevando la fiabilidad de nuestros sistemas de IA. Nuestro objetivo es producir material nuevo y relevante, respaldado por fuentes específicas.</p>
-</div>
-</div>
-</article>
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 2 — Activación con Xolo</h3>
-<p class="step-instructions">Cada estudiante abre su chat con Xolo y envía un saludo con perfil de aprendizaje e intereses, haciendo referencia a la misión.</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">Activen a Xolo con su perfil e intereses. Envíen un mensaje como: "Hola Xolo, soy [Nombre], perfil [Analista de Datos]; me interesa [la aplicación de IA en la medicina]. Estoy en la Misión M14 sobre RAG." Confirmen que comprendieron los criterios de hoy y sigan sus indicaciones personalizadas.</p>
-</div>
-</div>
-</article>
-</div>
-</section>
-<!-- 2) “I Can” + Desafío -->
-<section class="activity-card" id="activity-2">
-<h2 class="activity-title">“I Can Statement” + Desafío</h2>
-<p class="activity-purpose">Explicitar metas y presentar el reto que guiará la producción.</p>
-<div class="steps">
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 1 — Presenta el reto</h3>
-<p class="step-instructions">Proyectar Diapositiva 3. Define qué se logrará hoy (ser un "Experto Temático IA" con RAG).</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">El reto de hoy es convertirse en un "Experto Temático IA". Utilizarán la técnica RAG para generar contenido nuevo y preciso a partir de documentos específicos que ustedes proporcionen. Evaluaremos la coherencia del material con las fuentes, la precisión y la aplicación efectiva del proceso RAG.</p>
-</div>
-</div>
-</article>
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 2 — Escribe tu “I Can”</h3>
-<p class="step-instructions">Proyectar Diapositiva 4. Cada estudiante redacta 1 “I Can” concreto alineado al entregable del micro-proyecto.</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">Ahora, formulen su propio "I Can Statement" en una frase. Por ejemplo: "Puedo generar un guion de podcast relevante y preciso usando RAG en NotebookLM a partir de mis documentos fuente." Tienen un minuto para redactarlo.</p>
-</div>
-</div>
-</article>
-</div>
-</section>
-<!-- 3) AI GYM -->
-<section class="activity-card" id="activity-3">
-<h2 class="activity-title">AI GYM</h2>
-<p class="activity-purpose">Formalizar criterios y/o framework antes de producir.</p>
-<div class="steps">
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 1 — Marco del día: Retrieval Augmented Generation (RAG)</h3>
-<p class="step-instructions">Proyectar Diapositiva 5. Introduce RAG: problemas que resuelve (conocimiento obsoleto, alucinaciones, falta de acceso a datos privados), y el proceso Retrieval -> Augmentation -> Generation. Menciona 'chunking'.</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">Hoy nos enfocamos en RAG. Esta técnica es vital porque permite a las IA acceder a información externa y actualizada, evitando alucinaciones y el uso de datos obsoletos. El proceso es: primero, 'Retrieval' (la IA busca información relevante en sus documentos); segundo, 'Augmentation' (esa información se añade al prompt); y tercero, 'Generation' (la IA genera la respuesta usando el contexto aumentado). Conceptos como 'chunking' son clave para la eficiencia del 'retrieval'. Eviten generar contenido sin verificar las fuentes; con RAG, la trazabilidad es fundamental.</p>
-</div>
-</div>
-</article>
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 2 — Mini-demostración con NotebookLM</h3>
-<p class="step-instructions">Proyectar Diapositiva 6. Construye en vivo un ejemplo mínimo de RAG en NotebookLM (cargar documento, hacer pregunta, mostrar respuesta aumentada).</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">Observen cómo en NotebookLM cargamos este documento. Al hacer una pregunta específica, el sistema primero 'recupera' los pasajes más relevantes del documento. Luego, 'aumenta' mi pregunta con ese contexto y, finalmente, 'genera' una respuesta. ¿Pueden identificar en la respuesta dónde se cita el documento original? ¿La información generada es consistente con el texto fuente?</p>
-</div>
-</div>
-</article>
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 3 — Check rápido</h3>
-<p class="step-instructions">Proyectar Diapositiva 7. 2 ítems de verificación sobre RAG.</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">Pregunta 1: ¿Cuál es una de las principales limitaciones de los LLM que RAG busca resolver? Pregunta 2: Nombra las tres fases del proceso RAG.</p>
-</div>
-</div>
-</article>
-</div>
-</section>
-<!-- 4) Brain Spark -->
-<section class="activity-card" id="activity-4">
-<h2 class="activity-title">Brain Spark</h2>
-<p class="activity-purpose">Producir el entregable tangible del Micro-Proyecto aplicando el marco del AI GYM.</p>
-<div class="steps">
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 1 — Producción del material</h3>
-<p class="step-instructions">Proyectar Diapositiva 8. Cada estudiante sube documentos sobre un tema a NotebookLM y usa la generación aumentada para crear nuevo material (guion de podcast, caso de estudio, flashcards inteligentes, etc.). Tiempo de trabajo autónomo.</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">N/A</p>
-</div>
-</div>
-</article>
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 2 — Iteración y mejora</h3>
-<p class="step-instructions">Proyectar Diapositiva 9. Refina el material generado. Asegúrate de que todas las afirmaciones sean trazables a los documentos fuente y que el contenido sea coherente y relevante.</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">Antes de cerrar la producción: valida que cada dato clave en tu material se derive directamente de los documentos que cargaste. ¿El contenido es preciso? ¿El formato elegido es el más efectivo para comunicar la información? Ajusta y refina tu material según sea necesario.</p>
-</div>
-</div>
-</article>
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 3 — Evidencia de resultado</h3>
-<p class="step-instructions">Proyectar Diapositiva 10. Solicita el comprobante del material generado (enlace a NotebookLM, texto exportado, capturas de pantalla).</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">Suban la evidencia de su material generado al canal indicado. Nombren su archivo o enlace: M14_RAG_[Nombre]_[TipoDeMaterial].</p>
-</div>
-</div>
-</article>
-</div>
-</section>
-<!-- 5) GNIUS STORM -->
-<section class="activity-card" id="activity-5">
-<h2 class="activity-title">GNIUS STORM</h2>
-<p class="activity-purpose">Exhibición breve, síntesis y conexión profesional.</p>
-<div class="steps">
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 1 — Showcase relámpago</h3>
-<p class="step-instructions">2–3 estudiantes muestran la evidencia clave de su material generado (30–45 s c/u), enfocándose en cómo RAG mejoró la precisión.</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">Describan su material en 30 segundos: ¿Qué generaron? ¿Cómo la aplicación de RAG garantizó la precisión y relevancia del contenido a partir de sus fuentes?</p>
-</div>
-</div>
-</article>
-<article class="step-card">
-<div class="step-content">
-<h3 class="step-title">Paso 2 — Cierre ejecutivo</h3>
-<p class="step-instructions">Proyectar Diapositiva 11. Redacta síntesis: (a) 1 aprendizaje clave, (b) 1 criterio de calidad que marcó la diferencia, (c) siguiente paso aplicable fuera del aula.</p>
-</div>
-<div class="collapsible">
-<button type="button" class="collapsible-button">Diálogo Sugerido</button>
-<div class="collapsible-content">
-<p class="dialogue assistant">Síntesis de la misión: El aprendizaje clave de hoy es que las IA no solo generan, sino que pueden ser 'expertas' en un tema específico si les proporcionamos el contexto adecuado. El criterio de calidad que marcó la diferencia fue la trazabilidad y coherencia con las fuentes. Como siguiente paso, consideren cómo aplicar RAG en sus proyectos de investigación o en la creación de contenido especializado en cualquier campo, asegurando siempre la máxima fiabilidad.</p>
-</div>
-</div>
-</article>
-</div>
-</section>
-</main>
-</div>
-<script src="script.js"></script>
+    <header>
+        <h1><span class="book-icon">📋</span> <strong>Playbook: Misión 14 - 1o de Preparatoria</strong></h1>
+        <div class="header-widgets">
+            <div class="timer-container">
+                <span id="global-timer">⏱️ 40:00</span>
+                <button id="global-start-stop">Start</button>
+                <button id="global-reset">Reset</button>
+            </div>
+            <div class="theme-toggle">
+                <i class="fas fa-sun"></i>
+                <label class="switch">
+                    <input type="checkbox" id="theme-toggle-input">
+                    <span class="slider round"></span>
+                </label>
+                <i class="fas fa-moon"></i>
+            </div>
+        </div>
+    </header>
+    <div class="main-container">
+        <aside class="activity-list">
+            <h2>Actividades</h2>
+            <ul>
+                <li><a href="#activity-0">📝</a></li>
+                <li><a href="#activity-1">1</a></li>
+                <li><a href="#activity-2">2</a></li>
+                <li><a href="#activity-3">3</a></li>
+                <li><a href="#activity-4">4</a></li>
+                <li><a href="#activity-5">5</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+            <!-- ACTIVIDAD 0: DE UN VISTAZO -->
+            <div class="activity-card" id="activity-0">
+                <h2><span class="book-icon">📝</span> De un Vistazo: Comando Central</h2>
+                <p class="overview-subtitle">Todo lo que necesitas para preparar y ejecutar esta misión en minutos.</p>
+                
+                <div class="command-section">
+                    <h3>🎯 Objetivo de Aprendizaje</h3>
+                    <div class="objective-box">
+                        <p><strong>Los estudiantes podrán:</strong> Usar ChatGPT, Gemini o Claude para organizar fuentes y formular preguntas basadas en documentos para generar contenido con contexto aumentado y comprender la confiabilidad de la información y la trazabilidad.</p>
+                    </div>
+                </div>
+                <div class="command-section xolo-prompt">
+                    <h3>🤖 Prompt de Referencia para XOLO (Solo para Maestro)</h3>
+                    <div class="prompt-box">
+                        <div class="prompt-header">
+                            <span class="prompt-label">⚠️ NOTA: XOLO ya conoce el tema de esta misión. Este prompt es SOLO de referencia en caso de emergencia técnica:</span>
+                            <button class="copy-btn" onclick="copyPrompt('main-prompt')">
+                                <i class="fas fa-copy"></i> Copiar
+                            </button>
+                        </div>
+                        <pre id="main-prompt">Explícame qué problema resuelve RAG frente a los LLMs tradicionales. Analicemos las etapas Recuperar, Aumentar y Generar y guíame para entender por qué el chunking afecta la calidad de las respuestas.</pre>
+                    </div>
+                </div>
+                <div class="command-section">
+                    <h3>⚡ Puntos Esenciales de la Misión</h3>
+                    <div class="essentials-grid">
+                        <div class="essential-card">
+                            <div class="essential-icon">🎓</div>
+                            <h4>Concepto Clave</h4>
+                            <p>RAG (Generación Aumentada por Recuperación): Es como darle un libro abierto a la IA para que responda basándose solo en esa información, evitando que invente datos.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">🔧</div>
+                            <h4>Habilidad Técnica</h4>
+                            <p>Usar herramientas de IA para organizar documentos y generar respuestas basadas exclusivamente en ellos.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">🧪</div>
+                            <h4>Experimentación</h4>
+                            <p>Probar con diferentes tipos de documentos y preguntas específicas para entender cómo la calidad de la fuente afecta la respuesta.</p>
+                        </div>
+                        <div class="essential-card">
+                            <div class="essential-icon">💬</div>
+                            <h4>Interacción con XOLO</h4>
+                            <p>XOLO ya conoce a cada estudiante y el tema de hoy. Solo abren el chat y comienzan a aprender. Tú guías el timing y motivación.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-section">
+                    <h3>📦 Checklist de Materiales</h3>
+                    <div class="materials-checklist">
+                        <label><input type="checkbox"> Proyector/pantalla + presentación (5 diapositivas)</label>
+                        <label><input type="checkbox"> Internet estable + Gnius Space con XOLO activo</label>
+                        <label><input type="checkbox"> Computadora o tablet (1 por cada 2 estudiantes)</label>
+                        <label><input type="checkbox"> Acceso a ChatGPT (https://chatgpt.com/), Gemini (https://gemini.google.com/) o Claude (https://claude.ai/)</label>
+                        <label><input type="checkbox"> Documentos digitales para usar como fuentes (PDFs, artículos, notas)</label>
+                        <label><input type="checkbox"> ⚠️ Esta misión usa interacción con modelos de lenguaje (LLMs) y técnicas de RAG</label>
+                        <label><input type="checkbox"> 📋 No se requiere extensión, solo acceso a las plataformas mencionadas</label>
+                    </div>
+                    <p class="care-reminder"><strong>🛡️ Cuidado del equipo:</strong> Mantener tu espacio de trabajo limpio, cuidar tu computadora y cerrar tus sesiones al terminar.</p>
+                </div>
+                <div class="command-section">
+                    <h3>🗓️ Secuencia de la Misión (40 min)</h3>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-dot">1</div>
+                            <div class="timeline-content">
+                                <strong>Intro a la Misión</strong>
+                                <span class="time-badge">2 min</span>
+                                <p>Bienvenida, I Can Statement y contexto de la misión.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">2</div>
+                            <div class="timeline-content">
+                                <strong>A.I. Gym</strong>
+                                <span class="time-badge">8 min</span>
+                                <p>Los estudiantes abren el chat con XOLO y aprenden sobre RAG y confiabilidad de la información (sin prompt específico).</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">3</div>
+                            <div class="timeline-content">
+                                <strong>Brain Spark</strong>
+                                <span class="time-badge">20 min</span>
+                                <p>Idear, construir y experimentar un programa con XOLO.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">4</div>
+                            <div class="timeline-content">
+                                <strong>Gnius STORM - Compartir</strong>
+                                <span class="time-badge">5 min</span>
+                                <p>Demostración y reflexión en parejas.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-dot">5</div>
+                            <div class="timeline-content">
+                                <strong>Entrega de Evidencias</strong>
+                                <span class="time-badge">5 min</span>
+                                <p>Subir capturas a Gnius Space y finalizar misión.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-section">
+                    <h3>🚨 Resolución Rápida de Problemas</h3>
+                    <div class="troubleshooting-list">
+                        <ul>
+                            <li><strong>Si los alumnos no pueden ingresar a Gnius Space:</strong> Activa XOLO SOS en <a href="https://xolo.gnius.club" target="_blank">xolo.gnius.club</a> para continuar la misión sin interrumpir la clase.</li>
+                            <li><strong>Si la IA no lee el archivo:</strong> Verificar que el formato sea compatible (PDF, TXT, DOCX). Asegurarse de que el archivo no esté protegido con contraseña.</li>
+                            <li><strong>Si la IA responde con información general:</strong> Reforzar el prompt indicando "Responde ÚNICAMENTE basándote en los documentos proporcionados".</li>
+                            <li><strong>Si hay errores en el código:</strong> Recordar a los estudiantes que XOLO puede ayudar a depurar. Pídeles que copien el error y se lo muestren a XOLO.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 1: INTRO A LA MISIÓN -->
+            <div class="activity-card" id="activity-1">
+                <div class="activity-header">
+                    <h2>🚀 Actividad 1: Intro a la Misión</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 2:00</span>
+                        <button class="timer-start-btn" data-duration="120">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Dar la bienvenida con energía.</li>
+                            <li>Pedir a los alumnos que ingresen a Gnius Space.</li>
+                            <li>Proyecta diapositiva 1 con el I Can Statement.</li>
+                            <li>Motiva: "¡Hoy le daremos superpoderes de precisión a sus IAs!".</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <ul>
+                            <li>XOLO ya está listo y conoce a cada estudiante.</li>
+                            <li>Sabe que hoy toca aprender sobre RAG y confiabilidad de la información.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Escucha la misión del día.</li>
+                            <li>Loguearse en Gnius Space.</li>
+                            <li>Preparación para trabajar en parejas.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 1: I Can Statement</h4>
+                    <div class="slide-content">
+                        <p><strong>🎯 Hoy seré capaz de:</strong></p>
+                        <p class="highlight-text">🤖 A usar RAG para que nuestras IAs no inventen cosas y siempre digan la verdad.</p>
+                        <p><strong>Aplicación real:</strong> Los científicos y abogados usan esta tecnología para encontrar datos exactos en miles de documentos sin cometer errores.</p>
+                        <p><strong>Tu aliado:</strong> XOLO ya sabe qué vas a aprender hoy. ¡Solo abre el chat y comienza!</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 2: A.I. GYM -->
+            <div class="activity-card" id="activity-2">
+                <div class="activity-header">
+                    <h2>🧠 Actividad 2: A.I. Gym</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 8:00</span>
+                        <button class="timer-start-btn" data-duration="480">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Proyecta diapositiva 2.</li>
+                            <li>Indica: "Abran el chat con XOLO y salúdenlo. Él ya sabe qué les va a enseñar hoy."</li>
+                            <li>Circula para asegurar que todos interactúan con XOLO.</li>
+                            <li>Si alguien tiene dudas, recuérdale: "Pregúntale a XOLO, él te puede explicar de otra forma".</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">✅ XOLO ACTIVO</p>
+                        <ul>
+                            <li>Reconoce al estudiante y sus preferencias de aprendizaje.</li>
+                            <li>Explica cómo la IA recupera información de documentos específicos antes de responder.</li>
+                            <li>Introduce el concepto de trazabilidad y por qué es importante saber de dónde viene la información.</li>
+                            <li>Responde dudas sobre los conceptos.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Abrir el chat con XOLO y saludarlo.</li>
+                            <li>Aprender a usar la IA para analizar documentos específicos.</li>
+                            <li>Aprender sobre cómo evitar que la IA invente información (alucinaciones).</li>
+                            <li>Despejar todas sus dudas preguntando a XOLO.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 2: A.I. GYM</h4>
+                    <div class="slide-content">
+                        <p><strong>💬 Abre el chat con XOLO y salúdalo:</strong></p>
+                        <div class="prompt-box">
+                            <pre>"¡Hola XOLO! Estoy listo para aprender."</pre>
+                        </div>
+                        <p class="highlight-text" style="margin-top: 1rem;">✨ XOLO ya sabe quién eres y qué tema toca hoy. ¡Solo empieza a conversar!</p>
+                        <p class="highlight-text">🎯 Objetivo: Aprender a usar RAG para mejorar la precisión y confiabilidad de las respuestas.</p>
+                    </div>
+                </div>
+                
+                <div class="optional-script">
+                    <button class="collapsible-button">📖 Ver guion detallado (opcional)</button>
+                    <div class="collapsible-content">
+                        <p class="dialogue assistant">Ahora vamos a descubrir un secreto de los expertos en IA. ¿Alguna vez han notado que a veces la IA inventa cosas? Eso se llama alucinación. Hoy aprenderemos a evitarlo usando RAG. Abran el chat con XOLO y salúdenlo. XOLO ya los conoce y sabe exactamente qué les va a enseñar hoy. No necesitan escribir un prompt especial, solo empiecen a platicar con él sobre cómo hacer que la IA sea más confiable. Pregúntenle todo lo que quieran sobre cómo las máquinas leen documentos.</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 3: BRAIN SPARK -->
+            <div class="activity-card" id="activity-3">
+                <div class="activity-header">
+                    <h2>💡 Actividad 3: Brain Spark</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 20:00</span>
+                        <button class="timer-start-btn" data-duration="1200">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Proyecta la diapositiva 3.</li>
+                            <li>Indica: "Pidan a XOLO que los ayude a idear un proyecto. Cuando tengan su GCS, pásenlo a bloques en MakeCode, prueben en el simulador y luego con el hardware real".</li>
+                            <li>Entrega por parejas los Computadoras conforme los alumnos prueben su GCS en el simulador.</li>
+                            <li>Si hay errores, recuerda: "Pregúntenle a XOLO, él los ayuda a depurar".</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">✅ XOLO ACTIVO</p>
+                        <ul>
+                            <li>Ayuda a desarrollar una idea y un VIBE que aplique el uso de fuentes externas.</li>
+                            <li>Entrega el GCS de la idea del genio.</li>
+                            <li>Resuelve errores de sintaxis o lógica.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Trabajar con XOLO una idea y un VIBE para crear un Experto Temático IA.</li>
+                            <li>Traducir el GCS de XOLO a bloques en MakeCode.</li>
+                            <li>Depurar su programa con XOLO si hay errores.</li>
+                            <li>Cargar sus fuentes en la IA elegida y probar.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 3: Brain Spark</h4>
+                    <div class="slide-content">
+                        <p><strong>1. 💬 Pide a XOLO que te ayude a crear:</strong></p>
+                        <div class="prompt-box">
+                            <pre>"Ayúdame a crear mi Experto Temático IA: acompáñame a definir un tema, seleccionar documentos y formular preguntas que requieran evidencia. Guíame para generar un producto nuevo basado únicamente en esas fuentes. Ejecuta: entrega el producto final y señala qué partes dependen directamente de los documentos recuperados."</pre>
+                        </div>
+                        <p style="margin-top: 1.5rem;"><strong>2. 🔬 Experimenta y descubre con tu programa:</strong></p>
+                        <ul>
+                            <li>¿La IA respondió basándose únicamente en los documentos que le diste?</li>
+                            <li>¿Qué pasa si le haces una pregunta que NO está en los documentos?</li>
+                            <li>¿Funciona mejor si los documentos son cortos y directos o largos y complejos?</li>
+                            <li>¿Cómo ayuda el uso de fuentes a que la información sea más confiable y reducir la desinformación?</li>
+                            <li>¿Por qué es importante la trazabilidad (saber de qué página viene el dato) en un trabajo de investigación?</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="optional-script">
+                    <button class="collapsible-button">📖 Ver guion detallado (opcional)</button>
+                    <div class="collapsible-content">
+                        <p class="dialogue assistant">¡Es hora de crear su propio Experto Temático! Vamos a pasar de la idea al VIBE y luego al producto final. Por ejemplo, podrían crear un experto en 'Historia de la Tecnología' usando solo artículos científicos que ustedes elijan. XOLO los guiará para definir el tema y seleccionar las mejores fuentes. Una vez que tengan su plan, usen ChatGPT, Gemini o Claude para cargar sus documentos y ver la magia del RAG en acción. No olviden probar su experto con las preguntas de experimentación. Si tienen errores o dudas, pregúntenle a XOLO, él los ayudará a depurar su lógica.</p>
+                    </div>
+                </div>
+                <div class="challenge-prompt">
+                    <h4>🚀 Prompt de Desafío (para quienes terminen rápido)</h4>
+                    <div class="prompt-box">
+                        <p><strong>Si ya experimentaste con todo, pregunta a XOLO:</strong></p>
+                        <p class="challenge-text">"Ya probé con documentos de texto. ¿Puedes enseñarme cómo hacer que mi Experto Temático compare datos entre dos documentos diferentes y encuentre contradicciones?"</p>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 4: GNIUS STORM - COMPARTIR -->
+            <div class="activity-card" id="activity-4">
+                <div class="activity-header">
+                    <h2>⚡ Actividad 4: Gnius STORM - Compartir y Reflexionar</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 5:00</span>
+                        <button class="timer-start-btn" data-duration="300">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Organiza las parejas para compartir.</li>
+                            <li>Gestiona los tiempos: 2 min demo + 2 min reflexión + 1 min cierre.</li>
+                            <li>Facilita retroalimentación constructiva.</li>
+                            <li>Cierra con reflexión sobre aplicaciones reales.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">⏸️ XOLO EN ESPERA</p>
+                        <ul>
+                            <li>Disponible solo si hay dudas finales urgentes.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Demuestra su programa funcionando a otra pareja.</li>
+                            <li>Explica qué fuentes usó y cómo la IA las aprovechó bien.</li>
+                            <li>Comparte un descubrimiento interesante.</li>
+                            <li>Da retroalimentación positiva al compañero.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 4: Think-Pair-Share</h4>
+                    <div class="slide-content tps-structure">
+                        <div class="tps-phase">
+                            <h4>🤔 THINK (30 seg)</h4>
+                            <p>Reflexión individual: ¿Qué tipos de preguntas respondió mejor tu IA? ¿Qué te sorprendió de su precisión?</p>
+                        </div>
+                        <div class="tps-phase">
+                            <h4>👥 PAIR (2 min)</h4>
+                            <p>Con otra pareja: Demuestren su programa y expliquen su experiencia</p>
+                            <p class="highlight-text">Frase guía: "Mi IA usó fuentes sobre [TEMA]. Me sorprendió que pudo citar exactamente de dónde sacó la información."</p>
+                        </div>
+                        <div class="tps-phase">
+                            <h4>💬 SHARE (2 min)</h4>
+                            <p>Retroalimentación mutua y cierre del maestro.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ACTIVIDAD 5: ENTREGA DE EVIDENCIAS -->
+            <div class="activity-card" id="activity-5">
+                <div class="activity-header">
+                    <h2>✅ Actividad 5: Entrega de Evidencias</h2>
+                    <div class="activity-timer">
+                        <span class="activity-duration">⏱️ 5:00</span>
+                        <button class="timer-start-btn" data-duration="300">Iniciar</button>
+                    </div>
+                </div>
+                <div class="roles-section">
+                    <div class="role-card role-teacher">
+                        <h4>👨‍🏫 Rol del Maestro</h4>
+                        <ul>
+                            <li>Proyecta diapositiva 5 con las instrucciones.</li>
+                            <li>Guía a los estudiantes para tomar las capturas.</li>
+                            <li>Asegura que todos suban sus evidencias a Gnius Space.</li>
+                            <li>Felicita al grupo por completar la misión.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-xolo">
+                        <h4>🤖 Rol de XOLO</h4>
+                        <p class="xolo-status">⭕ XOLO FINALIZADO</p>
+                        <ul>
+                            <li>La interacción con XOLO ha terminado para esta misión.</li>
+                        </ul>
+                    </div>
+                    <div class="role-card role-student">
+                        <h4>👦 Rol del Alumno</h4>
+                        <ul>
+                            <li>Tomar screenshot de su código en MakeCode.</li>
+                            <li>Tomar screenshot de su conversación con XOLO.</li>
+                            <li>Subir ambas evidencias a Gnius Space.</li>
+                            <li>Dar click en "Finalizar Misión".</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="slide-reference">
+                    <h4>📊 Diapositiva 5: ¡Misión Cumplida!</h4>
+                    <div class="slide-content">
+                        <p><strong>📸 Para terminar, sube tus evidencias a Gnius Space:</strong></p>
+                        <ol>
+                            <li>Una captura de pantalla de tu programa final en <strong>MakeCode</strong>.</li>
+                            <li>Una captura de pantalla de tu conversación con <strong>XOLO</strong> donde te dio tu GCS.</li>
+                        </ol>
+                        <p class="highlight-text" style="margin-top: 1rem;">¡No olvides dar click en el botón <strong>"Finalizar Misión"</strong> cuando termines!</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
 </body>
-</html>
+</html></html>
